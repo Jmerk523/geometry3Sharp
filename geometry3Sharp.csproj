@@ -43,12 +43,12 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="UnityEngine">
-      <HintPath>..\..\..\Program Files\Unity\Editor\Data\PlaybackEngines\windowsstandalonesupport\Managed\UnityEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\..\Program Files\Unity\Editor\Data\PlaybackEngines\windowsstandalonesupport\Managed\UnityEngine.CoreModule.dll</HintPath>
-    </Reference>
+    <!-- <Reference Include="UnityEngine"> -->
+      <!-- <HintPath>..\Unity\UnityEngine.dll</HintPath> -->
+    <!-- </Reference> -->
+    <!-- <Reference Include="UnityEngine.CoreModule"> -->
+      <!-- <HintPath>..\Unity\UnityEngine.CoreModule.dll</HintPath> -->
+    <!-- </Reference> -->
   </ItemGroup>
   <ItemGroup>
     <Compile Include="approximation\BiArcFit2.cs" />
@@ -355,13 +355,18 @@
     <Folder Include="interfaces\" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="UnityEngine">
+      <Version>2.0.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
     <None Include=".gitignore" />
     <None Include="LICENSE" />
     <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy $(TargetDir)geometry3Sharp.* $(SolutionDir)UnityProject\Assets\geometry3Sharp</PostBuildEvent>
+    <!-- <PostBuildEvent>copy $(TargetDir)geometry3Sharp.* $(SolutionDir)UnityProject\Assets\geometry3Sharp</PostBuildEvent> -->
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
